@@ -16,4 +16,4 @@ generator: NOISE_3D
 
 biomes:
   type: SINGLE
-  biome: VOID
+  biome: VOIDOVER
