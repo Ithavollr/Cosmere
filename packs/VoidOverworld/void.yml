@@ -9,5 +9,6 @@ terrain:
     expression: if(x = 0 && y = 0 && z = 0, 1, -1)
 
 palette:
-  - BLOCK:minecraft:bedrock: 1
+  - BLOCK:minecraft:air: 319
+  - BLOCK:minecraft:bedrock: 0
   - BLOCK:minecraft:air: -1
