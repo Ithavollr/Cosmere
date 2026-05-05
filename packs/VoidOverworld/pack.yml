@@ -12,6 +12,9 @@ addons:
   config-biome: 0.1.+
   biome-provider-single: 0.1.+
 
+disable:
+  structures: true
+
 generator: NOISE_3D
 
 biomes:
