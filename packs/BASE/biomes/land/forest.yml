@@ -7,9 +7,15 @@ color:
   water-fog: 329011
   sky: 7916195
 
-terrain:
-  sampler: terrain/overworld/land/forest
-  palette: palettes/grass_and_dirt
+extends:
+  - TERRAIN_ROLLING
+
+palette:
+  - GRASS: 319
+  - SAND: 64
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
 
 features:
   - TEMPERATE_TREES

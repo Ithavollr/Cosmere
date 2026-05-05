@@ -1,0 +1,22 @@
+id: DEEP_COLD_OCEAN
+vanilla: minecraft:deep_cold_ocean
+
+color:
+  fog: 12638463
+  water: 4020182
+  water-fog: 329011
+  sky: 8103167
+
+extends:
+  - TERRAIN_DEEP_OCEAN
+
+palette:
+  - GRAVEL_SAND: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
+
+ocean:
+  level: 63
+  palette:
+    - OCEAN_WATER: 319

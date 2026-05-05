@@ -1,0 +1,20 @@
+id: MUSHROOM_FIELDS
+vanilla: minecraft:mushroom_fields
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 7842047
+
+extends:
+  - TERRAIN_FLAT
+
+palette:
+  - GRASS: 319
+  - SAND: 64
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
+
+features: []

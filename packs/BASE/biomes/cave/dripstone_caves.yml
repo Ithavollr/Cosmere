@@ -7,6 +7,11 @@ color:
   water-fog: 329011
   sky: 7254527
 
-terrain:
-  sampler: terrain/overworld/cave/dripstone
-  palette: palettes/dripstone
+extends:
+  - TERRAIN_CAVE
+
+palette:
+  - DRIPSTONE: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64

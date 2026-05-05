@@ -7,6 +7,16 @@ color:
   water-fog: 270131
   sky: 8168235
 
-terrain:
-  sampler: terrain/overworld/ocean/normal
-  palette: palettes/sand_and_gravel
+extends:
+  - TERRAIN_OCEAN
+
+palette:
+  - SAND: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
+
+ocean:
+  level: 63
+  palette:
+    - OCEAN_WATER: 319

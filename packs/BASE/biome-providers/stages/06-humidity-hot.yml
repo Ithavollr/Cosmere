@@ -1,0 +1,19 @@
+# Humidity splits for hot temperature band across all elevations.
+
+type: REPLACE_LIST
+sampler: humidity
+from:
+  flat-hot:
+    - DESERT: 5
+    - SAVANNA: 3
+    - BADLANDS: 2
+
+  hills-hot:
+    - WINDSWEPT_GRAVELLY_HILLS: 5
+    - BADLANDS: 3
+    - DESERT: 2
+
+  mountains-hot:
+    # Hot mountains resolve to meadow by default;
+    # weirdness stage later splits meadow into peaks.
+    - MEADOW: 10

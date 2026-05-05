@@ -7,6 +7,10 @@ color:
   water-fog: 329011
   sky: 7254527
 
-terrain:
-  sampler: terrain/overworld/cave/deep_dark
-  palette: palettes/deepslate
+extends:
+  - TERRAIN_CAVE
+
+palette:
+  - DEEPSLATE: 319
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64

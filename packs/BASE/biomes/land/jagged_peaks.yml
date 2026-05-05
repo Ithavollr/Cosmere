@@ -1,5 +1,7 @@
 id: JAGGED_PEAKS
 vanilla: minecraft:jagged_peaks
+tags:
+  - terra:rugged
 
 color:
   fog: 15724527
@@ -7,8 +9,21 @@ color:
   water-fog: 329011
   sky: 10526975
 
-terrain:
-  sampler: terrain/overworld/land/jagged_peaks
-  palette: palettes/stone_and_snow
+extends:
+  - TERRAIN_MOUNTAINS
+
+palette:
+  - STONE: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
+
+slant:
+  - threshold: 4
+    palette:
+      - STONE: 319
+      - DEEPSLATE_STRATA: 7
+      - BEDROCK_STRATA: -60
+      - BLOCK:minecraft:bedrock: -64
 
 features: []

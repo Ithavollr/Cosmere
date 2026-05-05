@@ -9,42 +9,66 @@
 
 ## Work items (rough priority order)
 
-### 1. Biome provider — HARD, new addon likely needed
-Vanilla uses **multi-noise** (temperature, humidity, continentalness, erosion, weirdness, depth splines).
-No Terra multi-noise biome provider addon exists. Options:
-- **A)** Write new `biome-provider-multi-noise` addon that reads the vanilla parameter lists from `worldgen/multi_noise_biome_source_parameter_list/`. Best fidelity.
-- **B)** Approximate using `biome-provider-pipeline-v2` with noise layers mapped to vanilla axes. Faster but imperfect placement.
+### 1. Biome provider — DONE (pipeline approach)
+Decision: took **Option B** — `biome-provider-pipeline-v2` with five noise axes (`continental`, `temperature`, `humidity`, `erosion`, `weirdness`) wired through `meta.yml` for world-type tunability.
 
-Recommendation: **Option A** for true clone.
+7-tier continental source (`MUSHROOM_FIELDS`, `DEEP_OCEAN`, `OCEAN`, `COAST`, `LAND_FLAT`, `LAND_HILLS`, `LAND_MOUNTAINS`) feeds 8 ordered stages: temperature → 5 humidity passes → weirdness peak split → fine-tuning. The fine-tuning stage uses `BORDER` mutators against `terra:` biome tags and is the designated home for variant biomes and adjacency-driven replacements.
 
-### 2. Terrain shape — HARD
-Vanilla terrain = layered density function graph (`offset` -> `factor` -> `jaggedness` -> `sloped_cheese` -> `final_density`). These are spline-based with continentalness/erosion/weirdness inputs.
+Multi-noise (Option A) abandoned — the pipeline gives sufficient fidelity and remains entirely YAML-configurable.
 
-Need to translate each density function to Terra `EXPRESSION` noise samplers, OR implement a `density-function` addon that evaluates the vanilla JSON graph natively.
+### 2. Terrain shape — DONE
+Eight abstract biomes defined under `biomes/abstract/`, each with an inline `LINEAR_HEIGHTMAP` sampler. All 36 concrete biomes use `extends:` to inherit terrain shape. No separate noise files needed.
 
-Key functions to port from `worldgen/density_function/overworld/`:
-- `continents`, `erosion`, `ridges`, `ridges_folded`, `depth`, `offset`, `factor`, `jaggedness`, `sloped_cheese`
-- All 60 noise parameter sets from `worldgen/noise/`
+| Abstract biome | Base Y | Scale | Concrete biomes |
+|---|---|---|---|
+| `TERRAIN_FLAT` | 68 | 8 | plains, snowy_tundra, savanna, beach, snowy_beach, stony_shore, mushroom_fields, desert, badlands |
+| `TERRAIN_LOWLANDS` | 62 | 5 | swamp |
+| `TERRAIN_ROLLING` | 72 | 14 | forest, birch_forest, dark_forest, jungle, taiga, snowy_taiga, old_growth_spruce_taiga |
+| `TERRAIN_HILLS` | 84 | 28 | meadow, windswept_hills, windswept_gravelly_hills, ice_spikes |
+| `TERRAIN_MOUNTAINS` | 110 | 55 | stony_peaks, frozen_peaks, jagged_peaks |
+| `TERRAIN_OCEAN` | 50 | 8 | ocean, lukewarm_ocean, warm_ocean |
+| `TERRAIN_DEEP_OCEAN` | 34 | 8 | deep_ocean, cold_ocean, frozen_ocean, deep_cold_ocean, deep_lukewarm_ocean, deep_frozen_ocean |
+| `TERRAIN_CAVE` | 320 | 0 | lush_caves, dripstone_caves, deep_dark |
 
-### 3. Surface palettes — MEDIUM
-`buildSurface` is a no-op in Terra — vanilla surface builders (grass/dirt, sand beaches, etc.) are bypassed. Need per-biome `palette:` blocks in BIOME yamls for all 65 biomes.
+Note: `base` and `scale` values are first-pass estimates; tuning against vanilla height profiles is expected during testing.
 
-### 4. Cave carvers — MEDIUM, requires NMS fix first
+### 3. Surface palettes — DONE
+19 palette YAMLs created across `palettes/{land,aquatic,cave,strata}/`. All 32 biome YAMLs use root-level `palette:` blocks, ocean biomes have `ocean.level`/`ocean.palette`, mountain/hill biomes have `slant:` configs, and `meta.yml` carries the `strata:` and `palette-bottom:` anchors.
+
+### 4. Cave carvers — PENDING (requires NMS fix first)
 `applyCarvers` is hardcoded to no-op in `NMSChunkGeneratorDelegate`. Need a `vanilla.caves` guard analogous to the `disable.structures` fix, then set `vanilla.caves: true` in pack.yml.
 
 Carvers to enable: `cave`, `cave_extra_underground`, `canyon`.
 
-### 5. Biome YAML files — MEDIUM/TEDIOUS
-One `.yml` per biome (65 total). Each needs:
-- `vanilla: minecraft:<biome>` mapping
-- `terrain:` sampler referencing shared noise expressions
-- `palette:` surface layers
+### 5. Biome YAML files — SUBSTANTIALLY DONE (variants pending)
+32 of ≈52 overworld surface biomes are written and wired through the pipeline. Remaining biomes are variants and specialty types that should be produced by `REPLACE_LIST`/`BORDER_LIST` entries in the **fine-tuning stage** (Stage 08), not by adding more continentalness/temperature/humidity slices upstream.
 
-Most overworld biomes share the same noise — parameterise, don't duplicate.
+Variants to add (all go through fine-tuning stage):
+- `cherry_grove` — `BORDER_LIST` against cold/temperate forest borders, weirdness-gated
+- `pale_garden` — weirdness-driven replacement of `DARK_FOREST`
+- `mangrove_swamp` — erosion-driven replacement of `SWAMP` in warm temperatures
+- `flower_forest` — weirdness-driven replacement of `FOREST`
+- `sunflower_plains` — weirdness-driven replacement of `PLAINS`
+- `old_growth_birch_forest` — weirdness-driven replacement of `BIRCH_FOREST`
+- `old_growth_pine_taiga` — weirdness-driven replacement of `TAIGA`
+- `sparse_jungle`, `bamboo_jungle` — weirdness/humidity splits of `JUNGLE`
+- `savanna_plateau`, `windswept_savanna` — erosion/weirdness splits of `SAVANNA`
+- `wooded_badlands`, `eroded_badlands` — erosion/weirdness splits of `BADLANDS`
+- `grove`, `snowy_slopes` — erosion/weirdness on cold mountain transition
+- `windswept_forest` — `BORDER` between forest and `terra:rugged`
 
-### 6. Pack wiring — SMALL
-- Switch `biome-provider-single` to new multi-noise provider
-- Add `vanilla.caves: true` once NMS delegate is fixed
+### 6. River stage — PENDING
+Vanilla rivers are carved by a dedicated `river_noise` parameter that cuts through land biomes. Needs:
+- New `river` sampler in `noise/biome-samplers.yml`
+- New `terra:use_river` / `terra:use_frozen_river` tags on appropriate land biomes
+- `REPLACE_LIST` stage gated by the river noise that turns tagged biomes into `RIVER` / `FROZEN_RIVER`
+- `RIVER` and `FROZEN_RIVER` biome YAMLs and palette files
+
+Likely placement: between weirdness (07) and fine-tuning (08), or as its own stage 09 after fine-tuning so cliffs and variants are decided before rivers carve through them.
+
+### 7. Pack wiring — SMALL
+- ~~Switch biome provider~~: Done. `pack.yml` uses `VANILLA_3D` extrusion provider wrapping `VANILLA_PIPELINE`.
+- Add `vanilla.caves: true` once NMS delegate is fixed (Work Item 4)
 - `disable.structures` stays `false` (default) so structures generate
 
 ---
@@ -65,4 +89,20 @@ Most overworld biomes share the same noise — parameterise, don't duplicate.
 2. **Unit test**: Create world with `temperature_floor = temperature_ceiling = 0.8` → verify only desert/savanna/jungle/badlands biomes appear, and vanilla cacti/acacia trees spawn.
 3. **Integration test**: Default parameters world. Fly across X/Z and verify biome transitions follow latitudinal pattern: frozen poles → temperate → hot equator (with noise patchiness).
 4. **3D test**: Descend below Y=0 in default world. Verify `deep_dark` biome appears in some regions (skulk blocks, wardens spawnable) and `lush_caves` / `dripstone_caves` in others.
-5. **Terrain linkage**: Verify each biome generates terrain at correct height (plains flat, jagged peaks tall) via terrain sampler from Work Item 3.
+5. **Terrain linkage**: Verify each biome generates terrain at correct height (plains flat, jagged peaks tall) via terrain sampler from Work Item 2.
+6. **Coast adjacency**: Verify `STONY_SHORE` only appears where `BEACH`/`SNOWY_BEACH` directly border `terra:rugged` biomes. Plain coastlines next to plains/forest stay as sand/snow beach.
+7. **Mushroom islands**: Verify `mushroom_fields` appears as small isolated patches inside deep ocean regions, never on continental land.
+8. **Surface palettes**: Spot-check at least one biome from each archetype (grass, sand, snow, gravel, terracotta, calcite, slant) for correct block layering down through deepslate and bedrock strata.
+9. **Ocean fill**: Verify all 9 ocean biomes fill to Y=63 with water and that beach biomes have a sub-sea sand layer down to Y=64.
+
+## Current Status Snapshot
+
+| Work Item | Status |
+|-----------|--------|
+| 1. Biome provider (pipeline) | DONE |
+| 2. Terrain samplers | DONE (first-pass values, tuning pending) |
+| 3. Surface palettes | DONE |
+| 4. Cave carvers (needs NMS fix) | PENDING |
+| 5. Variant biomes (via fine-tuning stage) | PENDING |
+| 6. River stage | PENDING |
+| 7. Pack wiring | DONE except `vanilla.caves` |

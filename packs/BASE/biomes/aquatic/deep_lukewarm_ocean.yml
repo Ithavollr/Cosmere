@@ -1,0 +1,22 @@
+id: DEEP_LUKEWARM_OCEAN
+vanilla: minecraft:deep_lukewarm_ocean
+
+color:
+  fog: 12638463
+  water: 4566514
+  water-fog: 267827
+  sky: 8103167
+
+extends:
+  - TERRAIN_DEEP_OCEAN
+
+palette:
+  - GRAVEL_SAND: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
+
+ocean:
+  level: 63
+  palette:
+    - OCEAN_WATER: 319

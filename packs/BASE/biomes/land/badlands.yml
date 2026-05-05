@@ -7,9 +7,14 @@ color:
   water-fog: 329011
   sky: 9420175
 
-terrain:
-  sampler: terrain/overworld/land/badlands
-  palette: palettes/terracotta_and_red_sand
+extends:
+  - TERRAIN_FLAT
+
+palette:
+  - TERRACOTTA: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
 
 features:
   - SPARSE_OAK_TREES

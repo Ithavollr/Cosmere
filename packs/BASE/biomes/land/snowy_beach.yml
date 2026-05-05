@@ -1,0 +1,21 @@
+id: SNOWY_BEACH
+vanilla: minecraft:snowy_beach
+tags:
+  - terra:beach
+
+color:
+  fog: 12638463
+  water: 4020182
+  water-fog: 329011
+  sky: 8364543
+
+extends:
+  - TERRAIN_FLAT
+
+palette:
+  - SNOW: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
+
+features: []

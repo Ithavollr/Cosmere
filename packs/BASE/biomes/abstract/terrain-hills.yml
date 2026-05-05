@@ -1,0 +1,14 @@
+id: TERRAIN_HILLS
+abstract: true
+
+terrain:
+  sampler:
+    type: LINEAR_HEIGHTMAP
+    base: 84
+    scale: 28
+    sampler:
+      type: FBM
+      octaves: 5
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.002

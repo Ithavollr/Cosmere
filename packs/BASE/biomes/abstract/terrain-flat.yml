@@ -1,0 +1,14 @@
+id: TERRAIN_FLAT
+abstract: true
+
+terrain:
+  sampler:
+    type: LINEAR_HEIGHTMAP
+    base: 68
+    scale: 8
+    sampler:
+      type: FBM
+      octaves: 4
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.003

@@ -1,0 +1,11 @@
+id: TERRAIN_CAVE
+abstract: true
+
+terrain:
+  sampler:
+    type: LINEAR_HEIGHTMAP
+    base: 320
+    scale: 0
+    sampler:
+      type: CONSTANT
+      value: 0

@@ -1,0 +1,6 @@
+id: BEDROCK_STRATA
+type: PALETTE
+layers:
+  - materials:
+      - minecraft:bedrock: 1
+    layers: 4

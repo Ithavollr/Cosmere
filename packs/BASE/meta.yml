@@ -23,3 +23,16 @@ meta:
   # World-type shortcuts (commented examples)
   # Setting temp_floor = temp_ceiling = 0.8  → all-hot (desert/savanna/jungle)
   # Setting continental_floor = continental_ceiling = -0.5 → all-ocean
+
+strata:
+  deepslate:
+    top: 7
+    bottom: -7
+  bedrock:
+    top: -60
+    bottom: -64
+
+palette-bottom:
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64

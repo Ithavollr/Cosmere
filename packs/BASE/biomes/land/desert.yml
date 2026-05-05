@@ -7,9 +7,14 @@ color:
   water-fog: 329011
   sky: 7254527
 
-terrain:
-  sampler: terrain/overworld/land/desert
-  palette: palettes/sand_and_sandstone
+extends:
+  - TERRAIN_FLAT
+
+palette:
+  - SAND: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
 
 features:
   - DEAD_TREES_SPARSE

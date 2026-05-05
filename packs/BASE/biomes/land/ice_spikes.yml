@@ -7,9 +7,14 @@ color:
   water-fog: 329011
   sky: 10526975
 
-terrain:
-  sampler: terrain/overworld/land/spiky
-  palette: palettes/snow_and_ice
+extends:
+  - TERRAIN_HILLS
+
+palette:
+  - SNOW_ICE: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
 
 features:
   - ICE_SPIKES

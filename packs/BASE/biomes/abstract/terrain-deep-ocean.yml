@@ -1,0 +1,14 @@
+id: TERRAIN_DEEP_OCEAN
+abstract: true
+
+terrain:
+  sampler:
+    type: LINEAR_HEIGHTMAP
+    base: 34
+    scale: 8
+    sampler:
+      type: FBM
+      octaves: 3
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.003

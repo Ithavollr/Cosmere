@@ -1,0 +1,18 @@
+# Humidity splits for cold temperature band across all elevations.
+
+type: REPLACE_LIST
+sampler: humidity
+from:
+  flat-cold:
+    - TAIGA: 5
+    - SNOWY_TAIGA: 3
+    - OLD_GROWTH_SPRUCE_TAIGA: 2
+
+  hills-cold:
+    - TAIGA: 5
+    - WINDSWEPT_HILLS: 5
+
+  mountains-cold:
+    # Cold mountains always resolve to jagged peaks
+    - JAGGED_PEAKS: 8
+    - MEADOW: 2

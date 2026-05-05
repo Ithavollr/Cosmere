@@ -1,0 +1,21 @@
+id: BEACH
+vanilla: minecraft:beach
+tags:
+  - terra:beach
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 7907327
+
+extends:
+  - TERRAIN_FLAT
+
+palette:
+  - SAND: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
+
+features: []

@@ -7,9 +7,14 @@ color:
   water-fog: 329011
   sky: 8364543
 
-terrain:
-  sampler: terrain/overworld/land/taiga
-  palette: palettes/snow_and_dirt
+extends:
+  - TERRAIN_ROLLING
+
+palette:
+  - SNOW: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
 
 features:
   - SPRUCE_TREES

@@ -1,5 +1,7 @@
 id: WINDSWEPT_HILLS
 vanilla: minecraft:windswept_hills
+tags:
+  - terra:rugged
 
 color:
   fog: 12638463
@@ -7,9 +9,23 @@ color:
   water-fog: 329011
   sky: 8233727
 
-terrain:
-  sampler: terrain/overworld/land/hills
-  palette: palettes/grass_and_dirt
+extends:
+  - TERRAIN_HILLS
+
+palette:
+  - GRASS: 319
+  - GRAVEL: 64
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
+
+slant:
+  - threshold: 4
+    palette:
+      - STONE: 319
+      - DEEPSLATE_STRATA: 7
+      - BEDROCK_STRATA: -60
+      - BLOCK:minecraft:bedrock: -64
 
 features:
   - SPARSE_OAK_TREES

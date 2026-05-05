@@ -1,5 +1,7 @@
 id: FROZEN_PEAKS
 vanilla: minecraft:frozen_peaks
+tags:
+  - terra:rugged
 
 color:
   fog: 15724527
@@ -7,8 +9,21 @@ color:
   water-fog: 329011
   sky: 10526975
 
-terrain:
-  sampler: terrain/overworld/land/frozen_peaks
-  palette: palettes/snow_and_ice
+extends:
+  - TERRAIN_MOUNTAINS
+
+palette:
+  - SNOW_ICE: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
+
+slant:
+  - threshold: 4
+    palette:
+      - STONE: 319
+      - DEEPSLATE_STRATA: 7
+      - BEDROCK_STRATA: -60
+      - BLOCK:minecraft:bedrock: -64
 
 features: []

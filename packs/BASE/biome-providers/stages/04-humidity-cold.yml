@@ -1,9 +1,0 @@
-type: REPLACE
-from: LAND_COLD
-to:
-  SNOWY_TAIGA: 0.2
-  TAIGA: 0.5
-  OLD_GROWTH_SPRUCE_TAIGA: 0.8
-noise:
-  type: EXPRESSION
-  expression: "clamp(humidity, -1.0, 1.0)"

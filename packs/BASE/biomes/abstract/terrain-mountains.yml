@@ -1,0 +1,14 @@
+id: TERRAIN_MOUNTAINS
+abstract: true
+
+terrain:
+  sampler:
+    type: LINEAR_HEIGHTMAP
+    base: 110
+    scale: 55
+    sampler:
+      type: FBM
+      octaves: 6
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.0015

@@ -7,9 +7,14 @@ color:
   water-fog: 2302743
   sky: 7916195
 
-terrain:
-  sampler: terrain/overworld/land/swamp
-  palette: palettes/clay_and_dirt
+extends:
+  - TERRAIN_LOWLANDS
+
+palette:
+  - CLAY: 319
+  - DEEPSLATE_STRATA: 7
+  - BEDROCK_STRATA: -60
+  - BLOCK:minecraft:bedrock: -64
 
 features:
   - SWAMP_TREES

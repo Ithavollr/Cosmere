@@ -1,0 +1,6 @@
+id: OCEAN_WATER
+type: PALETTE
+layers:
+  - materials:
+      - minecraft:water: 1
+    layers: 1

@@ -8,8 +8,17 @@ pipeline:
     type: SAMPLER
     sampler: continental
     biomes:
-      - OCEAN: ${meta:land_threshold}
-      - LAND: ${meta:land_threshold}
+      # Continentalness drives both ocean depth and land elevation.
+      # Most negative continentalness = deepest ocean / mushroom islands.
+      # Most positive continentalness = highest mountains.
+      # Weights are slice widths across the normalized noise range.
+      - MUSHROOM_FIELDS: 3  # Most negative: rare mushroom island outcrops in deep ocean
+      - DEEP_OCEAN: 27      # Very negative continentalness
+      - OCEAN: 15           # Moderately negative
+      - COAST: 10           # Near-zero: beaches and stony shores
+      - LAND_FLAT: 20       # Low positive (plains, forests)
+      - LAND_HILLS: 20      # Medium positive (windswept hills)
+      - LAND_MOUNTAINS: 5   # High positive (meadows, peaks)
   stages:
     # Ocean and land stratification stages will be loaded from separate files
     # for maintainability. The pipeline system automatically discovers

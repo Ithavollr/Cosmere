@@ -29,6 +29,11 @@ noise:
       raw: "open_simplex_2(x/512, z/512 + 4000)"
     expression: "clamp(raw, ${meta:weirdness_floor}, ${meta:weirdness_ceiling})"
 
+  # White noise — used by fine-tuning BORDER stages where only one replacement
+  # exists and sampler output is irrelevant, but the field is required.
+  whiteNoise:
+    type: WHITE_NOISE
+
   # Cave noises (3D, used by EXTRUSION provider)
   deep_dark_noise:
     type: EXPRESSION
