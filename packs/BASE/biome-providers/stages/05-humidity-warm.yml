@@ -1,20 +1,21 @@
 # Humidity splits for warm temperature band across all elevations.
 
-stage-type: REPLACE_LIST
-sampler: humidity
-from:
-  flat-warm:
-    - SAVANNA: 4
-    - PLAINS: 3
-    - FOREST: 2
-    - JUNGLE: 1
-
-  hills-warm:
-    - WINDSWEPT_HILLS: 5
-    - SAVANNA: 3
-    - PLAINS: 2
-
-  mountains-warm:
-    # Warm mountains resolve to meadow by default;
-    # weirdness stage later splits meadow into peaks.
-    - MEADOW: 10
+stages:
+  - stage-type: REPLACE_LIST
+    sampler: humidity
+    from:
+      flat-warm:
+        - SAVANNA: 4
+        - PLAINS: 3
+        - FOREST: 2
+        - JUNGLE: 1
+    
+      hills-warm:
+        - WINDSWEPT_HILLS: 5
+        - SAVANNA: 3
+        - PLAINS: 2
+    
+      mountains-warm:
+        # Warm mountains resolve to meadow by default;
+        # weirdness stage later splits meadow into peaks.
+        - MEADOW: 10

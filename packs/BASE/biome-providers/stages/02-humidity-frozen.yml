@@ -1,18 +1,19 @@
 # Humidity splits for frozen temperature band across all elevations.
 # Humidity is a vanilla noise parameter controlling aridity vs. lushness.
 
-stage-type: REPLACE_LIST
-sampler: humidity
-from:
-  flat-frozen:
-    - SNOWY_TUNDRA: 7
-    - ICE_SPIKES: 3
-
-  hills-frozen:
-    - SNOWY_TAIGA: 5
-    - WINDSWEPT_HILLS: 5
-
-  mountains-frozen:
-    # Frozen mountains always resolve to frozen peaks
-    - FROZEN_PEAKS: 7
-    - JAGGED_PEAKS: 3
+stages:
+  - stage-type: REPLACE_LIST
+    sampler: humidity
+    from:
+      flat-frozen:
+        - SNOWY_TUNDRA: 7
+        - ICE_SPIKES: 3
+    
+      hills-frozen:
+        - SNOWY_TAIGA: 5
+        - WINDSWEPT_HILLS: 5
+    
+      mountains-frozen:
+        # Frozen mountains always resolve to frozen peaks
+        - FROZEN_PEAKS: 7
+        - JAGGED_PEAKS: 3

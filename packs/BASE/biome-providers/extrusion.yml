@@ -1,7 +1,6 @@
 id: VANILLA_3D
-type: BIOME_PROVIDER
-provider: EXTRUSION
-base: VANILLA_PIPELINE  # 2D surface pipeline
+type: EXTRUSION
+provider: VANILLA_PIPELINE
 extrusions:
   # Deep Dark: spawns below Y=0 in areas with low cave_noise
   - type: REPLACE

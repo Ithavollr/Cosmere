@@ -1,6 +1,5 @@
 id: VANILLA_PIPELINE
-type: BIOME_PROVIDER
-provider: PIPELINE
+type: PIPELINE
 resolution: 4
 
 pipeline:
@@ -20,6 +19,15 @@ pipeline:
       - LAND_HILLS: 20      # Medium positive (windswept hills)
       - LAND_MOUNTAINS: 5   # High positive (meadows, peaks)
   stages:
-    # Ocean and land stratification stages will be loaded from separate files
-    # for maintainability. The pipeline system automatically discovers
-    # stage configs in the stages/ directory.
+    # Temperature stage
+    - << biome-providers/stages/01-temperature.yml:stages
+    # Humidity stages for each temperature tier
+    - << biome-providers/stages/02-humidity-frozen.yml:stages
+    - << biome-providers/stages/03-humidity-cold.yml:stages
+    - << biome-providers/stages/04-humidity-temperate.yml:stages
+    - << biome-providers/stages/05-humidity-warm.yml:stages
+    - << biome-providers/stages/06-humidity-hot.yml:stages
+    # Weirdness peaks stage
+    - << biome-providers/stages/07-weirdness-peaks.yml:stages
+    # Fine-tuning stage
+    - << biome-providers/stages/08-fine-tuning.yml:stages

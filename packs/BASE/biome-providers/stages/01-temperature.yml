@@ -3,9 +3,10 @@
 # Deep oceans have 4 temperature variants (no deep warm ocean in vanilla 1.21).
 # Shallow oceans and all land tiers have 5 temperature variants.
 
-stage-type: REPLACE_LIST
-sampler: temperature
-from:
+stages:
+  - stage-type: REPLACE_LIST
+    sampler: temperature
+    from:
   DEEP_OCEAN:
     # Vanilla 1.21 has 4 deep ocean variants (no deep warm ocean)
     - DEEP_FROZEN_OCEAN: 25
