@@ -21,5 +21,145 @@ addons:
 generator: NOISE_3D
 
 biomes:
-  type: BIOME_PROVIDER
-  provider: VANILLA_3D
+  type: EXTRUSION
+  provider:
+    type: PIPELINE
+    resolution: 4
+    pipeline:
+      source:
+        type: SAMPLER
+        sampler: continental
+        biomes:
+          - MUSHROOM_FIELDS: 3
+          - DEEP_OCEAN: 27
+          - OCEAN: 15
+          - COAST: 10
+          - LAND_FLAT: 20
+          - LAND_HILLS: 20
+          - LAND_MOUNTAINS: 5
+      stages:
+        # Temperature stage
+        - stage-type: REPLACE_LIST
+          sampler: temperature
+          from:
+            DEEP_OCEAN:
+              - DEEP_FROZEN_OCEAN: 25
+              - DEEP_COLD_OCEAN: 25
+              - DEEP_OCEAN: 25
+              - DEEP_LUKEWARM_OCEAN: 25
+            OCEAN:
+              - FROZEN_OCEAN: 20
+              - COLD_OCEAN: 20
+              - OCEAN: 20
+              - LUKEWARM_OCEAN: 20
+              - WARM_OCEAN: 20
+            COAST:
+              - SNOWY_BEACH: 20
+              - BEACH: 80
+            LAND_FLAT:
+              - flat-frozen: 15
+              - flat-cold: 20
+              - flat-temperate: 30
+              - flat-warm: 20
+              - flat-hot: 15
+            LAND_HILLS:
+              - hills-frozen: 15
+              - hills-cold: 20
+              - hills-temperate: 30
+              - hills-warm: 20
+              - hills-hot: 15
+            LAND_MOUNTAINS:
+              - mountains-frozen: 15
+              - mountains-cold: 20
+              - mountains-temperate: 30
+              - mountains-warm: 20
+              - mountains-hot: 15
+        # Humidity stages
+        - stage-type: REPLACE_LIST
+          sampler: humidity
+          from:
+            flat-frozen:
+              - SNOWY_TUNDRA: 7
+              - ICE_SPIKES: 3
+            hills-frozen:
+              - SNOWY_TAIGA: 5
+              - WINDSWEPT_HILLS: 5
+            mountains-frozen:
+              - FROZEN_PEAKS: 7
+              - JAGGED_PEAKS: 3
+            flat-cold:
+              - TAIGA: 5
+              - SNOWY_TAIGA: 3
+              - OLD_GROWTH_SPRUCE_TAIGA: 2
+            hills-cold:
+              - TAIGA: 5
+              - WINDSWEPT_HILLS: 5
+            mountains-cold:
+              - JAGGED_PEAKS: 8
+              - MEADOW: 2
+            flat-temperate:
+              - PLAINS: 3
+              - FOREST: 3
+              - BIRCH_FOREST: 2
+              - DARK_FOREST: 1
+              - SWAMP: 1
+            hills-temperate:
+              - WINDSWEPT_HILLS: 5
+              - FOREST: 3
+              - PLAINS: 2
+            mountains-temperate:
+              - MEADOW: 10
+            flat-warm:
+              - SAVANNA: 4
+              - PLAINS: 3
+              - FOREST: 2
+              - JUNGLE: 1
+            hills-warm:
+              - WINDSWEPT_HILLS: 5
+              - SAVANNA: 3
+              - PLAINS: 2
+            mountains-warm:
+              - MEADOW: 10
+            flat-hot:
+              - DESERT: 5
+              - SAVANNA: 3
+              - BADLANDS: 2
+            hills-hot:
+              - WINDSWEPT_GRAVELLY_HILLS: 5
+              - BADLANDS: 3
+              - DESERT: 2
+            mountains-hot:
+              - MEADOW: 10
+        # Weirdness peaks stage
+        - stage-type: REPLACE_LIST
+          sampler: weirdness
+          from:
+            MEADOW:
+              - MEADOW: 5
+              - STONY_PEAKS: 5
+        # Fine-tuning stage
+        - stage-type: BORDER
+          sampler: whiteNoise
+          from: terra:rugged
+          replace: terra:beach
+          to:
+            - STONY_SHORE: 1
+  extrusions:
+    - type: REPLACE
+      from: "*"
+      to: DEEP_DARK
+      noise: deep_dark_noise
+      min-y: -64
+      max-y: 0
+    - type: REPLACE
+      from: "*"
+      to: DRIPSTONE_CAVES
+      noise: dripstone_cave_noise
+      min-y: -64
+      max-y: 60
+    - type: REPLACE
+      from: "*"
+      to: LUSH_CAVES
+      noise: lush_cave_noise
+      min-y: -64
+      max-y: 60
