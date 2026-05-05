@@ -1,0 +1,16 @@
+id: TAIGA
+vanilla: minecraft:taiga
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 8360127
+
+terrain:
+  sampler: terrain/overworld/land/taiga
+  palette: palettes/grass_and_dirt
+
+features:
+  - SPRUCE_TREES
+  - SPRUCE_TREE_PATCHES

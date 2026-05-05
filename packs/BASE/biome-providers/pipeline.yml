@@ -1,0 +1,16 @@
+id: VANILLA_PIPELINE
+type: BIOME_PROVIDER
+provider: PIPELINE
+resolution: 4
+
+pipeline:
+  source:
+    type: SAMPLER
+    sampler: continental
+    biomes:
+      - OCEAN: ${meta:land_threshold}
+      - LAND: ${meta:land_threshold}
+  stages:
+    # Ocean and land stratification stages will be loaded from separate files
+    # for maintainability. The pipeline system automatically discovers
+    # stage configs in the stages/ directory.

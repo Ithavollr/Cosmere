@@ -1,0 +1,14 @@
+id: JAGGED_PEAKS
+vanilla: minecraft:jagged_peaks
+
+color:
+  fog: 15724527
+  water: 4159204
+  water-fog: 329011
+  sky: 10526975
+
+terrain:
+  sampler: terrain/overworld/land/jagged_peaks
+  palette: palettes/stone_and_snow
+
+features: []

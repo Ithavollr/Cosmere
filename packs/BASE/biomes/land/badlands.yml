@@ -1,0 +1,15 @@
+id: BADLANDS
+vanilla: minecraft:badlands
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 9420175
+
+terrain:
+  sampler: terrain/overworld/land/badlands
+  palette: palettes/terracotta_and_red_sand
+
+features:
+  - SPARSE_OAK_TREES

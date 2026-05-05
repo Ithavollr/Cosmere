@@ -58,3 +58,11 @@ Most overworld biomes share the same noise — parameterise, don't duplicate.
 - Aquifer placement (driven by vanilla density functions deep inside `fillFromNoise`)
 - Ore vein density functions (`ore_veininess`, `ore_vein_a/b`) — internal to vanilla noise fill
 - Terrain blending at old/new chunk borders
+
+## Verification Plan
+
+1. **Unit test**: Create world with `continental_floor = continental_ceiling = -0.5` → verify all chunks report ocean biomes and no land terrain generates.
+2. **Unit test**: Create world with `temperature_floor = temperature_ceiling = 0.8` → verify only desert/savanna/jungle/badlands biomes appear, and vanilla cacti/acacia trees spawn.
+3. **Integration test**: Default parameters world. Fly across X/Z and verify biome transitions follow latitudinal pattern: frozen poles → temperate → hot equator (with noise patchiness).
+4. **3D test**: Descend below Y=0 in default world. Verify `deep_dark` biome appears in some regions (skulk blocks, wardens spawnable) and `lush_caves` / `dripstone_caves` in others.
+5. **Terrain linkage**: Verify each biome generates terrain at correct height (plains flat, jagged peaks tall) via terrain sampler from Work Item 3.

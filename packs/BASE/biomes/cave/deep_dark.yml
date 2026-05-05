@@ -1,0 +1,12 @@
+id: DEEP_DARK
+vanilla: minecraft:deep_dark
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 7254527
+
+terrain:
+  sampler: terrain/overworld/cave/deep_dark
+  palette: palettes/deepslate

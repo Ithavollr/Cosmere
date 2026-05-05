@@ -1,0 +1,15 @@
+id: DESERT
+vanilla: minecraft:desert
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 7254527
+
+terrain:
+  sampler: terrain/overworld/land/desert
+  palette: palettes/sand_and_sandstone
+
+features:
+  - DEAD_TREES_SPARSE

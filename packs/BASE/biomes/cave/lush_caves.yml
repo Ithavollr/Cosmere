@@ -1,0 +1,12 @@
+id: LUSH_CAVES
+vanilla: minecraft:lush_caves
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 7254527
+
+terrain:
+  sampler: terrain/overworld/cave/lush
+  palette: palettes/moss_and_clay

@@ -1,0 +1,49 @@
+noise:
+  continental:
+    type: EXPRESSION
+    variables:
+      raw: "open_simplex_2(x/2048, z/2048)"
+    expression: "clamp(raw, ${meta:continental_floor}, ${meta:continental_ceiling})"
+
+  temperature:
+    type: EXPRESSION
+    variables:
+      raw: "open_simplex_2(x/1024 + 1000, z/1024)"
+    expression: "clamp(raw, ${meta:temperature_floor}, ${meta:temperature_ceiling})"
+
+  humidity:
+    type: EXPRESSION
+    variables:
+      raw: "open_simplex_2(x/1024, z/1024 + 2000)"
+    expression: "clamp(raw, ${meta:humidity_floor}, ${meta:humidity_ceiling})"
+
+  erosion:
+    type: EXPRESSION
+    variables:
+      raw: "open_simplex_2(x/512 + 3000, z/512)"
+    expression: "clamp(raw, ${meta:erosion_floor}, ${meta:erosion_ceiling})"
+
+  weirdness:
+    type: EXPRESSION
+    variables:
+      raw: "open_simplex_2(x/512, z/512 + 4000)"
+    expression: "clamp(raw, ${meta:weirdness_floor}, ${meta:weirdness_ceiling})"
+
+  # Cave noises (3D, used by EXTRUSION provider)
+  deep_dark_noise:
+    type: EXPRESSION
+    variables:
+      raw: "open_simplex_2(x/256, y/64, z/256 + 5000)"
+    expression: "raw > 0.6 ? 1 : 0"
+
+  dripstone_cave_noise:
+    type: EXPRESSION
+    variables:
+      raw: "open_simplex_2(x/256, y/64, z/256 + 6000)"
+    expression: "raw > 0.5 ? 1 : 0"
+
+  lush_cave_noise:
+    type: EXPRESSION
+    variables:
+      raw: "open_simplex_2(x/256, y/64, z/256 + 7000)"
+    expression: "raw > 0.5 ? 1 : 0"

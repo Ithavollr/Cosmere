@@ -1,0 +1,16 @@
+id: FOREST
+vanilla: minecraft:forest
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 7916195
+
+terrain:
+  sampler: terrain/overworld/land/forest
+  palette: palettes/grass_and_dirt
+
+features:
+  - TEMPERATE_TREES
+  - DENSE_TEMPERATE_TREE_PATCHES

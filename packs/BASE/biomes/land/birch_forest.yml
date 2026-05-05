@@ -1,0 +1,15 @@
+id: BIRCH_FOREST
+vanilla: minecraft:birch_forest
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 8360127
+
+terrain:
+  sampler: terrain/overworld/land/forest
+  palette: palettes/grass_and_dirt
+
+features:
+  - BIRCH_TREES

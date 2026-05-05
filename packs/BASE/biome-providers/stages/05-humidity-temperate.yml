@@ -1,0 +1,11 @@
+type: REPLACE
+from: LAND_TEMPERATE
+to:
+  PLAINS: 0.1
+  FOREST: 0.3
+  BIRCH_FOREST: 0.5
+  DARK_FOREST: 0.7
+  SWAMP: 0.9
+noise:
+  type: EXPRESSION
+  expression: "clamp(humidity, -1.0, 1.0)"

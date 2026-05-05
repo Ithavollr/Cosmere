@@ -1,0 +1,15 @@
+id: DARK_FOREST
+vanilla: minecraft:dark_forest
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 7916195
+
+terrain:
+  sampler: terrain/overworld/land/dark_forest
+  palette: palettes/grass_and_dirt
+
+features:
+  - DENSE_DARK_FOREST_TREES

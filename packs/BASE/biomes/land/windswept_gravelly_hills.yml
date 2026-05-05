@@ -1,0 +1,15 @@
+id: WINDSWEPT_GRAVELLY_HILLS
+vanilla: minecraft:windswept_gravelly_hills
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 8233727
+
+terrain:
+  sampler: terrain/overworld/land/gravelly_hills
+  palette: palettes/gravel_and_dirt
+
+features:
+  - SPARSE_OAK_TREES

@@ -1,0 +1,10 @@
+type: REPLACE
+from: LAND_HOT
+to:
+  DESERT: 0.1
+  SAVANNA: 0.3
+  BADLANDS: 0.5
+  JUNGLE: 0.7
+noise:
+  type: EXPRESSION
+  expression: "clamp(humidity, -1.0, 1.0)"

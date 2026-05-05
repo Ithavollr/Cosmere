@@ -1,0 +1,12 @@
+id: OCEAN
+vanilla: minecraft:ocean
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 8103167
+
+terrain:
+  sampler: terrain/overworld/ocean/normal
+  palette: palettes/sand_and_gravel

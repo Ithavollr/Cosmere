@@ -1,0 +1,16 @@
+id: SWAMP
+vanilla: minecraft:swamp
+
+color:
+  fog: 12638463
+  water: 6388580
+  water-fog: 2302743
+  sky: 7916195
+
+terrain:
+  sampler: terrain/overworld/land/swamp
+  palette: palettes/clay_and_dirt
+
+features:
+  - SWAMP_TREES
+  - DEAD_SWAMP_TREES

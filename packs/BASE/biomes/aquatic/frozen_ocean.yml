@@ -1,0 +1,13 @@
+id: FROZEN_OCEAN
+vanilla: minecraft:frozen_ocean
+
+color:
+  fog: 10526975
+  water: 3750089
+  water-fog: 329011
+  sky: 8364543
+
+# Terrain sampler for ocean floor - will be defined in Work Item 3
+terrain:
+  sampler: terrain/overworld/ocean/deep
+  palette: palettes/gravel_and_sand

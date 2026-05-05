@@ -1,0 +1,16 @@
+id: SNOWY_TUNDRA
+vanilla: minecraft:snowy_plains
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 8364543
+
+terrain:
+  sampler: terrain/overworld/land/flat
+  palette: palettes/snow_and_dirt
+
+features:
+  - SPARSE_SPRUCE_TREES
+  - ICE_SPIKES

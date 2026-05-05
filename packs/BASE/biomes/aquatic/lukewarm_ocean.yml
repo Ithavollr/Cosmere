@@ -1,0 +1,12 @@
+id: LUKEWARM_OCEAN
+vanilla: minecraft:lukewarm_ocean
+
+color:
+  fog: 12638463
+  water: 4566514
+  water-fog: 267805
+  sky: 8103167
+
+terrain:
+  sampler: terrain/overworld/ocean/normal
+  palette: palettes/sand_and_gravel

@@ -1,0 +1,28 @@
+id: VANILLA_3D
+type: BIOME_PROVIDER
+provider: EXTRUSION
+base: VANILLA_PIPELINE  # 2D surface pipeline
+extrusions:
+  # Deep Dark: spawns below Y=0 in areas with low cave_noise
+  - type: REPLACE
+    from: "*"
+    to: DEEP_DARK
+    noise: deep_dark_noise
+    min-y: -64
+    max-y: 0
+
+  # Dripstone Caves
+  - type: REPLACE
+    from: "*"
+    to: DRIPSTONE_CAVES
+    noise: dripstone_cave_noise
+    min-y: -64
+    max-y: 60
+
+  # Lush Caves
+  - type: REPLACE
+    from: "*"
+    to: LUSH_CAVES
+    noise: lush_cave_noise
+    min-y: -64
+    max-y: 60

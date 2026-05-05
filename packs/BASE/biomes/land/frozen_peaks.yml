@@ -1,0 +1,14 @@
+id: FROZEN_PEAKS
+vanilla: minecraft:frozen_peaks
+
+color:
+  fog: 15724527
+  water: 4159204
+  water-fog: 329011
+  sky: 10526975
+
+terrain:
+  sampler: terrain/overworld/land/frozen_peaks
+  palette: palettes/snow_and_ice
+
+features: []

@@ -1,0 +1,16 @@
+id: OLD_GROWTH_SPRUCE_TAIGA
+vanilla: minecraft:old_growth_spruce_taiga
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 8360127
+
+terrain:
+  sampler: terrain/overworld/land/old_growth
+  palette: palettes/podzol_and_dirt
+
+features:
+  - GIANT_REDWOODS
+  - EVERGREEN_TREES

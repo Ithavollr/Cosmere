@@ -1,0 +1,11 @@
+# Apply erosion-based terrain forms to all land biomes
+# This stage runs multiple times, once for each base land biome
+type: REPLACE
+from: PLAINS
+to:
+  PLAINS: 0.4
+  WINDSWEPT_HILLS: 0.6
+  MEADOW: 0.8
+noise:
+  type: EXPRESSION
+  expression: "clamp(erosion, -1.0, 1.0)"

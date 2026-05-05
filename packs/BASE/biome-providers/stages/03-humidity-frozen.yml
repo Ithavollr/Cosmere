@@ -1,0 +1,8 @@
+type: REPLACE
+from: LAND_FROZEN
+to:
+  SNOWY_TUNDRA: 0.3
+  ICE_SPIKES: 0.7
+noise:
+  type: EXPRESSION
+  expression: "clamp(humidity, -1.0, 1.0)"

@@ -1,0 +1,16 @@
+id: JUNGLE
+vanilla: minecraft:jungle
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 5470985
+
+terrain:
+  sampler: terrain/overworld/land/jungle
+  palette: palettes/grass_and_podzol
+
+features:
+  - JUNGLE_TREES
+  - MANGROVE_TREES

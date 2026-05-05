@@ -1,0 +1,5 @@
+type: SAMPLER
+sampler: continental
+biomes:
+  - OCEAN: ${meta:land_threshold}
+  - LAND: ${meta:land_threshold}

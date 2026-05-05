@@ -1,0 +1,25 @@
+meta:
+  # Continentalness axis (-1.0 = deep ocean, +1.0 = inland/mountains)
+  continental_floor: -1.0
+  continental_ceiling: 1.0
+  land_threshold: 0.0       # Above = land; below = ocean
+
+  # Temperature axis (-1.0 = frozen, +1.0 = hot)
+  temperature_floor: -1.0
+  temperature_ceiling: 1.0
+
+  # Humidity / vegetation axis (-1.0 = arid, +1.0 = humid)
+  humidity_floor: -1.0
+  humidity_ceiling: 1.0
+
+  # Erosion axis (-1.0 = flat/eroded, +1.0 = rugged/un-eroded)
+  erosion_floor: -1.0
+  erosion_ceiling: 1.0
+
+  # Weirdness / ridges axis (-1.0 = valleys, +1.0 = peaks)
+  weirdness_floor: -1.0
+  weirdness_ceiling: 1.0
+
+  # World-type shortcuts (commented examples)
+  # Setting temp_floor = temp_ceiling = 0.8  → all-hot (desert/savanna/jungle)
+  # Setting continental_floor = continental_ceiling = -0.5 → all-ocean

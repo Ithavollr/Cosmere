@@ -1,0 +1,16 @@
+id: MEADOW
+vanilla: minecraft:meadow
+
+color:
+  fog: 12638463
+  water: 4159204
+  water-fog: 329011
+  sky: 8233727
+
+terrain:
+  sampler: terrain/overworld/land/meadow
+  palette: palettes/grass_and_dirt
+
+features:
+  - SEASONAL_TREES
+  - GREAT_AZALEA_TREES

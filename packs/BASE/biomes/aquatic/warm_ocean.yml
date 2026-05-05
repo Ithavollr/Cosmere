@@ -1,0 +1,12 @@
+id: WARM_OCEAN
+vanilla: minecraft:warm_ocean
+
+color:
+  fog: 12638463
+  water: 4445678
+  water-fog: 270131
+  sky: 8168235
+
+terrain:
+  sampler: terrain/overworld/ocean/normal
+  palette: palettes/sand_and_gravel
