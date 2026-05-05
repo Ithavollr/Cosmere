@@ -1,6 +1,6 @@
 # Humidity splits for warm temperature band across all elevations.
 
-type: REPLACE_LIST
+stage-type: REPLACE_LIST
 sampler: humidity
 from:
   flat-warm:

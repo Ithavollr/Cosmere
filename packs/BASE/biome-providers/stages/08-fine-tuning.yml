@@ -12,7 +12,7 @@
 # Future replacements (variant biomes, specialty biomes) should be added below
 # as additional BORDER, BORDER_LIST, or REPLACE_LIST entries.
 
-type: BORDER
+stage-type: BORDER
 sampler: whiteNoise
 # Any terra:beach cell that borders a terra:rugged cell becomes STONY_SHORE.
 from: terra:rugged

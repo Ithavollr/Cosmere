@@ -1,4 +1,4 @@
-type: SAMPLER
+continental-type: SAMPLER
 sampler: continental
 biomes:
   # Continentalness drives both ocean depth and land elevation.

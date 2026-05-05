@@ -1,7 +1,7 @@
 # Humidity splits for frozen temperature band across all elevations.
 # Humidity is a vanilla noise parameter controlling aridity vs. lushness.
 
-type: REPLACE_LIST
+stage-type: REPLACE_LIST
 sampler: humidity
 from:
   flat-frozen:

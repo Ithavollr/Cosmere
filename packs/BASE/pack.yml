@@ -5,13 +5,18 @@ version: 1.0.0
 author: Ifiht
 
 addons:
-  language-yaml: 0.1.+
-  chunk-generator-noise-3d: 0.1.+
-  config-noise-function: 0.1.+
-  palette-block-shortcut: 0.1.+
-  config-biome: 0.1.+
-  biome-provider-pipeline-v2: 0.1.+
-  biome-provider-extrusion: 0.1.+
+  language-yaml: 1.+
+  chunk-generator-noise-3d: 1.+
+  config-noise-function: 1.+
+  palette-block-shortcut: 1.+
+  config-biome: 1.+
+  biome-provider-pipeline-v2: 1.+
+  biome-provider-extrusion: 1.+
+  config-feature: 1.+
+  config-palette: 1.+
+  config-distributors: 1.+
+  config-locators: 1.+
+  generation-stage-feature: 1.+
 
 generator: NOISE_3D
 

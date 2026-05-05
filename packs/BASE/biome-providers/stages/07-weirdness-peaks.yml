@@ -4,7 +4,7 @@
 # This stage only operates on temperate/warm/hot mountain placeholders
 # that resolved to MEADOW.
 
-type: REPLACE_LIST
+stage-type: REPLACE_LIST
 sampler: weirdness
 from:
   MEADOW:
