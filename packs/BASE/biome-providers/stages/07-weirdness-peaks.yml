@@ -5,7 +5,7 @@
 # that resolved to MEADOW.
 
 stages:
-      - stage-type: REPLACE_LIST
+  - stage-type: REPLACE_LIST
     sampler: weirdness
     from:
       MEADOW:
