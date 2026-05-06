@@ -173,24 +173,27 @@ biomes:
       sampler:
         type: OPEN_SIMPLEX_2
         frequency: 0.01
-      min-y: -64
-      max-y: 0
+      range:
+        min: -64
+        max: 0
     - type: REPLACE
       from: "*"
       to: DRIPSTONE_CAVES
       sampler:
         type: OPEN_SIMPLEX_2
         frequency: 0.01
-      min-y: -64
-      max-y: 60
+      range:
+        min: -64
+        max: 60
     - type: REPLACE
       from: "*"
       to: LUSH_CAVES
       sampler:
         type: OPEN_SIMPLEX_2
         frequency: 0.01
-      min-y: -64
-      max-y: 60
+      range:
+        min: -64
+        max: 60
 
 samplers:
   "<<":
