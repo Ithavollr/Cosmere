@@ -170,19 +170,25 @@ biomes:
     - type: REPLACE
       from: "*"
       to: DEEP_DARK
-      noise: deep_dark_noise
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.01
       min-y: -64
       max-y: 0
     - type: REPLACE
       from: "*"
       to: DRIPSTONE_CAVES
-      noise: dripstone_cave_noise
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.01
       min-y: -64
       max-y: 60
     - type: REPLACE
       from: "*"
       to: LUSH_CAVES
-      noise: lush_cave_noise
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.01
       min-y: -64
       max-y: 60
 
