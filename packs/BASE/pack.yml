@@ -167,3 +167,7 @@ biomes:
       noise: lush_cave_noise
       min-y: -64
       max-y: 60
+
+samplers:
+  "<<":
+    - math/samplers/simplex.yml:samplers
