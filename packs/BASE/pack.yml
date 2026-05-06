@@ -168,7 +168,7 @@ biomes:
             - STONY_SHORE: 1
   extrusions:
     - type: REPLACE
-      from: "*"
+      from: CAVE
       to: DEEP_DARK
       sampler:
         type: OPEN_SIMPLEX_2
@@ -177,7 +177,7 @@ biomes:
         min: -64
         max: 0
     - type: REPLACE
-      from: "*"
+      from: CAVE
       to: DRIPSTONE_CAVES
       sampler:
         type: OPEN_SIMPLEX_2
@@ -186,7 +186,7 @@ biomes:
         min: -64
         max: 60
     - type: REPLACE
-      from: "*"
+      from: CAVE
       to: LUSH_CAVES
       sampler:
         type: OPEN_SIMPLEX_2

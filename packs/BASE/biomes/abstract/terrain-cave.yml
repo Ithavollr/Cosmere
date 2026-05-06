@@ -2,6 +2,9 @@ id: TERRAIN_CAVE
 type: BIOME
 abstract: true
 
+tags:
+  - CAVE
+
 terrain:
   sampler:
     type: LINEAR_HEIGHTMAP
