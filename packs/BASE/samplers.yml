@@ -1,0 +1,7 @@
+samplers:
+  simplex:
+    dimensions: 2
+    type: FBM
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.01
