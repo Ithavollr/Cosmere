@@ -19,5 +19,4 @@ palette:
 
 ocean:
   level: 63
-  palette:
-    - OCEAN_WATER: 319
+  palette: $palettes/ocean/ocean_water.yml:layers
