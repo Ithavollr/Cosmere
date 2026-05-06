@@ -43,7 +43,7 @@ biomes:
           - LAND_MOUNTAINS: 5
       stages:
         # Temperature stage
-        - stage-type: REPLACE_LIST
+        - type: REPLACE_LIST
           sampler: $noise/temperature.yml:temperature_sampler
           from:
             DEEP_OCEAN:
@@ -79,7 +79,7 @@ biomes:
               - mountains-warm: 20
               - mountains-hot: 15
         # Humidity stages
-        - stage-type: REPLACE_LIST
+        - type: REPLACE_LIST
           sampler: $noise/humidity.yml:humidity_sampler
           from:
             flat-frozen:
@@ -135,14 +135,14 @@ biomes:
             mountains-hot:
               - MEADOW: 10
         # Weirdness peaks stage
-        - stage-type: REPLACE_LIST
+        - type: REPLACE_LIST
           sampler: $noise/weirdness.yml:weirdness_sampler
           from:
             MEADOW:
               - MEADOW: 5
               - STONY_PEAKS: 5
         # Fine-tuning stage
-        - stage-type: BORDER
+        - type: BORDER
           sampler: $noise/white.yml:white_sampler
           from: terra:rugged
           replace: terra:beach
