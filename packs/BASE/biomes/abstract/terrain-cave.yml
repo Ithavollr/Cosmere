@@ -1,4 +1,5 @@
 id: TERRAIN_CAVE
+type: BIOME
 abstract: true
 
 terrain:

@@ -1,4 +1,5 @@
 id: JAGGED_PEAKS
+type: BIOME
 vanilla: minecraft:jagged_peaks
 tags:
   - terra:rugged

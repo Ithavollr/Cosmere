@@ -1,4 +1,5 @@
 id: WINDSWEPT_GRAVELLY_HILLS
+type: BIOME
 vanilla: minecraft:windswept_gravelly_hills
 tags:
   - terra:rugged

@@ -1,4 +1,5 @@
 id: MUSHROOM_FIELDS
+type: BIOME
 vanilla: minecraft:mushroom_fields
 
 color:

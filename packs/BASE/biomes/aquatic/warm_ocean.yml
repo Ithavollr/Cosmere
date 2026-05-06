@@ -1,4 +1,5 @@
 id: WARM_OCEAN
+type: BIOME
 vanilla: minecraft:warm_ocean
 
 color:

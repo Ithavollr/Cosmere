@@ -1,4 +1,5 @@
 id: OCEAN
+type: BIOME
 vanilla: minecraft:ocean
 
 color:

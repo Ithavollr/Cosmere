@@ -1,4 +1,5 @@
 id: DRIPSTONE_CAVES
+type: BIOME
 vanilla: minecraft:dripstone_caves
 
 color:

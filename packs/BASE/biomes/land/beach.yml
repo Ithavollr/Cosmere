@@ -1,4 +1,5 @@
 id: BEACH
+type: BIOME
 vanilla: minecraft:beach
 tags:
   - terra:beach

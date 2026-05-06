@@ -1,4 +1,5 @@
 id: TERRAIN_LOWLANDS
+type: BIOME
 abstract: true
 
 terrain:

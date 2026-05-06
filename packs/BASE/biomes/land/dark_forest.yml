@@ -1,4 +1,5 @@
 id: DARK_FOREST
+type: BIOME
 vanilla: minecraft:dark_forest
 
 color:

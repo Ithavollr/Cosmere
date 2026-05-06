@@ -1,4 +1,5 @@
 id: TERRAIN_ROLLING
+type: BIOME
 abstract: true
 
 terrain:

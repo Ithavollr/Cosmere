@@ -1,4 +1,5 @@
 id: LUSH_CAVES
+type: BIOME
 vanilla: minecraft:lush_caves
 
 color:

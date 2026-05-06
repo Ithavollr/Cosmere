@@ -1,4 +1,5 @@
 id: BIRCH_FOREST
+type: BIOME
 vanilla: minecraft:birch_forest
 
 color:

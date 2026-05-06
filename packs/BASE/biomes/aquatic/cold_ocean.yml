@@ -1,4 +1,5 @@
 id: COLD_OCEAN
+type: BIOME
 vanilla: minecraft:cold_ocean
 
 color:

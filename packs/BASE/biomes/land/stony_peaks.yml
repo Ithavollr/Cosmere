@@ -1,4 +1,5 @@
 id: STONY_PEAKS
+type: BIOME
 vanilla: minecraft:stony_peaks
 tags:
   - terra:rugged

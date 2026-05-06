@@ -1,4 +1,5 @@
 id: TERRAIN_OCEAN
+type: BIOME
 abstract: true
 
 terrain:

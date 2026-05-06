@@ -1,4 +1,5 @@
 id: DESERT
+type: BIOME
 vanilla: minecraft:desert
 
 color:

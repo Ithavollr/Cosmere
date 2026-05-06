@@ -1,4 +1,5 @@
 id: SNOWY_BEACH
+type: BIOME
 vanilla: minecraft:snowy_beach
 tags:
   - terra:beach
