@@ -79,6 +79,12 @@ biomes:
               - mountains-warm: 20
               - mountains-hot: 15
           default-from: OCEAN
+          default-to:
+            - FROZEN_OCEAN: 20
+            - COLD_OCEAN: 20
+            - OCEAN: 20
+            - LUKEWARM_OCEAN: 20
+            - WARM_OCEAN: 20
         # Humidity stages
         - type: REPLACE_LIST
           sampler: $noise/humidity.yml:humidity_sampler
@@ -136,6 +142,12 @@ biomes:
             mountains-hot:
               - MEADOW: 10
           default-from: flat-temperate
+          default-to:
+            - PLAINS: 3
+            - FOREST: 3
+            - BIRCH_FOREST: 2
+            - DARK_FOREST: 1
+            - SWAMP: 1
         # Weirdness peaks stage
         - type: REPLACE_LIST
           sampler: $noise/weirdness.yml:weirdness_sampler
@@ -144,6 +156,9 @@ biomes:
               - MEADOW: 5
               - STONY_PEAKS: 5
           default-from: MEADOW
+          default-to:
+            - MEADOW: 5
+            - STONY_PEAKS: 5
         # Fine-tuning stage
         - type: BORDER
           sampler: $noise/white.yml:white_sampler
