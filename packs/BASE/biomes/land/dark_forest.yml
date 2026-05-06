@@ -2,7 +2,7 @@ id: DARK_FOREST
 type: BIOME
 vanilla: minecraft:dark_forest
 
-color:
+colors:
   fog: 12638463
   water: 4159204
   water-fog: 329011

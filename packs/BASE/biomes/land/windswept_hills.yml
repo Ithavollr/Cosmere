@@ -4,7 +4,7 @@ vanilla: minecraft:windswept_hills
 tags:
   - terra:rugged
 
-color:
+colors:
   fog: 12638463
   water: 4159204
   water-fog: 329011

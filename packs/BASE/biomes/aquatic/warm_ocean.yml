@@ -2,7 +2,7 @@ id: WARM_OCEAN
 type: BIOME
 vanilla: minecraft:warm_ocean
 
-color:
+colors:
   fog: 12638463
   water: 4445678
   water-fog: 270131

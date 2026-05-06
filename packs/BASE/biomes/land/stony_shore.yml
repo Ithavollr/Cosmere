@@ -2,7 +2,7 @@ id: STONY_SHORE
 type: BIOME
 vanilla: minecraft:stony_shore
 
-color:
+colors:
   fog: 12638463
   water: 4159204
   water-fog: 329011

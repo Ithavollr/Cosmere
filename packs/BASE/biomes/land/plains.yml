@@ -2,7 +2,7 @@ id: PLAINS
 type: BIOME
 vanilla: minecraft:plains
 
-color:
+colors:
   fog: 12638463
   water: 4159204
   water-fog: 329011

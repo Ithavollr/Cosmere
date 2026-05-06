@@ -2,7 +2,7 @@ id: SNOWY_TUNDRA
 type: BIOME
 vanilla: minecraft:snowy_plains
 
-color:
+colors:
   fog: 12638463
   water: 4159204
   water-fog: 329011

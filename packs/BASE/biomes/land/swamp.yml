@@ -2,7 +2,7 @@ id: SWAMP
 type: BIOME
 vanilla: minecraft:swamp
 
-color:
+colors:
   fog: 12638463
   water: 6388580
   water-fog: 2302743

@@ -2,7 +2,7 @@ id: MEADOW
 type: BIOME
 vanilla: minecraft:meadow
 
-color:
+colors:
   fog: 12638463
   water: 4159204
   water-fog: 329011

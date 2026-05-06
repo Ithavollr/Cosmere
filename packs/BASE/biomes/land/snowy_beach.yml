@@ -4,7 +4,7 @@ vanilla: minecraft:snowy_beach
 tags:
   - terra:beach
 
-color:
+colors:
   fog: 12638463
   water: 4020182
   water-fog: 329011

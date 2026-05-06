@@ -2,7 +2,7 @@ id: COLD_OCEAN
 type: BIOME
 vanilla: minecraft:cold_ocean
 
-color:
+colors:
   fog: 10526975
   water: 4566514
   water-fog: 2698510

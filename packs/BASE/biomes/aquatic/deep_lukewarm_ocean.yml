@@ -2,7 +2,7 @@ id: DEEP_LUKEWARM_OCEAN
 type: BIOME
 vanilla: minecraft:deep_lukewarm_ocean
 
-color:
+colors:
   fog: 12638463
   water: 4566514
   water-fog: 267827

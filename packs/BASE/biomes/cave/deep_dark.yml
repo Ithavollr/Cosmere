@@ -2,7 +2,7 @@ id: DEEP_DARK
 type: BIOME
 vanilla: minecraft:deep_dark
 
-color:
+colors:
   fog: 12638463
   water: 4159204
   water-fog: 329011

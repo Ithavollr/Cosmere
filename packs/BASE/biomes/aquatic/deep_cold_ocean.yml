@@ -2,7 +2,7 @@ id: DEEP_COLD_OCEAN
 type: BIOME
 vanilla: minecraft:deep_cold_ocean
 
-color:
+colors:
   fog: 12638463
   water: 4020182
   water-fog: 329011

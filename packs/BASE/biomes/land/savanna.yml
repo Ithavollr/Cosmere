@@ -2,7 +2,7 @@ id: SAVANNA
 type: BIOME
 vanilla: minecraft:savanna
 
-color:
+colors:
   fog: 12638463
   water: 4159204
   water-fog: 329011

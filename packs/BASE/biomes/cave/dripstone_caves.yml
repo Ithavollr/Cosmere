@@ -2,7 +2,7 @@ id: DRIPSTONE_CAVES
 type: BIOME
 vanilla: minecraft:dripstone_caves
 
-color:
+colors:
   fog: 12638463
   water: 4159204
   water-fog: 329011

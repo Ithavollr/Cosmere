@@ -2,7 +2,7 @@ id: FROZEN_OCEAN
 type: BIOME
 vanilla: minecraft:frozen_ocean
 
-color:
+colors:
   fog: 10526975
   water: 3750089
   water-fog: 329011

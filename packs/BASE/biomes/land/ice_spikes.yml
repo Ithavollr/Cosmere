@@ -2,7 +2,7 @@ id: ICE_SPIKES
 type: BIOME
 vanilla: minecraft:ice_spikes
 
-color:
+colors:
   fog: 15724527
   water: 4159204
   water-fog: 329011
