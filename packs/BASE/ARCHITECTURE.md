@@ -161,17 +161,18 @@ Structure scripts (`.tesf` files) use the `sampler()` function from `terrascript
 | Noise System | Purpose | Config Location |
 |--------------|---------|-----------------|
 | **Pipeline noise** (`continental`, `temperature`, `humidity`, `erosion`, `weirdness`) | Biome selection and placement | `noise/biome-samplers.yml` |
-| **TerraScript noise** (`simplex`) | Shape warping for custom structures | `samplers.yml` (pack root) |
+| **TerraScript noise** (`simplex`, `simplex3`) | Shape warping for custom structures | `math/samplers/simplex.yml` (injected into `pack.yml` via `<<`) |
 
 The pipeline noise samplers drive the `biome-provider-pipeline-v2` to select which biome exists at a given (x, z) coordinate. These operate at world-gen scale (frequencies 0.0005-0.01) and determine the broad biome landscape.
 
-**TerraScript noise serves a completely different purpose.** The `simplex` sampler provides 2D procedural variation for custom structure generation—specifically for **trees and mushrooms**, which are the exception to our vanilla passthrough strategy. While we passthrough NMS decoration for ores, vegetation patches, and most features, the tree and mushroom features in this pack use Terra's custom `.tesf` (TerraScript) procedural generation. These scripts need fine-grained noise (frequency 0.01) to warp mushroom caps, vary tree branch angles, and add organic irregularity that vanilla structures don't provide.
+**TerraScript noise serves a completely different purpose.** The `simplex` and `simplex3` samplers provide procedural variation for custom structure generation—specifically for **trees and mushrooms**, which are the exception to our vanilla passthrough strategy. While we passthrough NMS decoration for ores, vegetation patches, and most features, the tree and mushroom features in this pack use Terra's custom `.tesf` (TerraScript) procedural generation. These scripts need fine-grained noise (frequency 0.0075) to warp mushroom caps, vary tree branch angles, and add organic irregularity that vanilla structures don't provide.
 
 | Sampler | Dimensions | Frequency | Purpose |
 |---------|------------|-----------|---------|
-| `simplex` | 2D | 0.01 | Mushroom shape warping (`brown_mushroom_disk.tesf`, `red_mushroom_disk.tesf`, `large_mixed_mushroom_procedural.tesf`), azalea tree variation (`great_azalea_tree.tesf`, `great_azalea_tree_tunnel.tesf`) |
+| `simplex` | 2D | 0.0075 | Mushroom shape warping (`brown_mushroom_disk.tesf`, `red_mushroom_disk.tesf`, `large_mixed_mushroom_procedural.tesf`) |
+| `simplex3` | 3D | 0.0075 | Azalea tree variation (`great_azalea_tree.tesf`, `great_azalea_tree_tunnel.tesf`) |
 
-**Why this separation matters:** The `terrascript-function-sampler` addon bridges the `config-noise-function` samplers into TerraScript's expression evaluator. Without this addon, scripts cannot access any noise functions. The `simplex` sampler defined in `samplers.yml` is registered globally by `config-noise-function`, then made available to scripts via the `FunctionBuilder` registry that `terrascript-function-sampler` populates during pack preload.
+**Why this separation matters:** The `config-noise-function` addon loads samplers from the `samplers:` key in `pack.yml` into the pack's config context. The `terrascript-function-sampler` addon then bridges those pack-level samplers into TerraScript's expression evaluator as the `sampler()` function. Without either addon, scripts cannot access noise functions. The samplers are **not** globally registered—they are scoped to the pack's `NoiseConfigPackTemplate` and injected into TerraScript via `FunctionBuilder` during pack preload.
 
 ## File Structure
 
