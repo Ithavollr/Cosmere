@@ -24,6 +24,14 @@ meta:
   # Setting temp_floor = temp_ceiling = 0.8  → all-hot (desert/savanna/jungle)
   # Setting continental_floor = continental_ceiling = -0.5 → all-ocean
 
+biome-distribution:
+  continental-scale: 100
+  temperature-scale: 60
+  humidity-scale: 50
+  erosion-scale: 35
+  weirdness-scale: 60
+  global-scale: 1
+
 strata:
   deepslate:
     top: 7
