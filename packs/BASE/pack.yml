@@ -45,7 +45,7 @@ biomes:
         # Temperature stage
         - type: REPLACE_LIST
           sampler: $noise/temperature.yml:temperature_sampler
-          from:
+          to:
             DEEP_OCEAN:
               - DEEP_FROZEN_OCEAN: 25
               - DEEP_COLD_OCEAN: 25
@@ -88,7 +88,7 @@ biomes:
         # Humidity stages
         - type: REPLACE_LIST
           sampler: $noise/humidity.yml:humidity_sampler
-          from:
+          to:
             flat-frozen:
               - SNOWY_TUNDRA: 7
               - ICE_SPIKES: 3
@@ -151,7 +151,7 @@ biomes:
         # Weirdness peaks stage
         - type: REPLACE_LIST
           sampler: $noise/weirdness.yml:weirdness_sampler
-          from:
+          to:
             MEADOW:
               - MEADOW: 5
               - STONY_PEAKS: 5
