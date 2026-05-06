@@ -32,7 +32,7 @@ biomes:
     pipeline:
       source:
         type: SAMPLER
-        sampler: continental
+        sampler: $noise/continental.yml:continental_sampler
         biomes:
           - MUSHROOM_FIELDS: 3
           - DEEP_OCEAN: 27
@@ -44,7 +44,7 @@ biomes:
       stages:
         # Temperature stage
         - stage-type: REPLACE_LIST
-          sampler: temperature
+          sampler: $noise/temperature.yml:temperature_sampler
           from:
             DEEP_OCEAN:
               - DEEP_FROZEN_OCEAN: 25
@@ -80,7 +80,7 @@ biomes:
               - mountains-hot: 15
         # Humidity stages
         - stage-type: REPLACE_LIST
-          sampler: humidity
+          sampler: $noise/humidity.yml:humidity_sampler
           from:
             flat-frozen:
               - SNOWY_TUNDRA: 7
@@ -136,14 +136,14 @@ biomes:
               - MEADOW: 10
         # Weirdness peaks stage
         - stage-type: REPLACE_LIST
-          sampler: weirdness
+          sampler: $noise/weirdness.yml:weirdness_sampler
           from:
             MEADOW:
               - MEADOW: 5
               - STONY_PEAKS: 5
         # Fine-tuning stage
         - stage-type: BORDER
-          sampler: whiteNoise
+          sampler: $noise/white.yml:white_sampler
           from: terra:rugged
           replace: terra:beach
           to:
