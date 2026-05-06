@@ -19,4 +19,4 @@ palette:
 
 ocean:
   level: 63
-  palette: $palettes/ocean/ocean_water.yml
+  palette: BLOCK:minecraft:water
